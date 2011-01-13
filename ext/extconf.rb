@@ -1,2 +1,2 @@
 require 'mkmf'
-create_makefile('fast')
+create_makefile('fastlz')
