@@ -1,0 +1,46 @@
+= FastLZ/Ruby
+
+Copyright (c) 2011 SUGAWARA Genki <sgwr_dts@yahoo.co.jp>
+
+== Description
+
+Ruby bindings for FastLZ.
+
+FastLZ is very fast compression library.
+
+== Source Code
+
+https://bitbucket.org/winebarrel/fastlz-ruby
+
+== Install
+
+gem install fastlz
+
+== Example
+
+    require 'fastlz'
+    
+    source = <<-EOS
+    London Bridge Is falling down,
+    Falling down, Falling down.
+    London Bridge Is falling down,
+    My fair lady.
+    EOS
+    
+    comp_data = FastLZ.compress(source)
+    decomp_data = FastLZ.decompress(comp_data)
+    
+    puts <<-EOS
+    - block compress -
+    uncompress size: #{source.length}
+    compress size: #{comp_data.length}
+    decompress size: #{decomp_data.length}
+    decompress success?: #{source == decomp_data}
+    EOS
+
+=== FastLZ
+
+FastLZ/Ruby contains FastLZ.
+
+* http://fastlz.org/
+*  Copyright (C) 2006-2007 Ariya Hidayat
